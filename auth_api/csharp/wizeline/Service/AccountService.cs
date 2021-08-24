@@ -22,7 +22,7 @@ namespace wizeline.Service
             user = null;
             using (var connection = new MySql.Data.MySqlClient.MySqlConnection("Server=bootcamp-tht.sre.wize.mx;Database=bootcamp_tht;User Id=secret;Password=noPow3r"))
             {
-                string pass = EncryptionFunctions.GetSHA256(salt, password);
+                string pass = EncryptionFunctions.GetSHA512(salt, password);
                 string sqlUser = "SELECT username, role FROM users where username = @username and password = @password";
                 user = await connection.QueryFirstOrDefaultAsync<UserModel>(sqlUser, new { username = username, password = pass });
                 if(user != null) user.Token = CreateToken(signVerify);

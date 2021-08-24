@@ -25,13 +25,12 @@ namespace wizeline.tests
 
 
         [Test]
-        [TestCase("F^S%QljSfV","secret", "857c8a8fd0531d50f88ec79a9270ff419cbe17a2d4e32711e27694596d21efd2")]
-        [TestCase("KjvFUC#K*i","noPow3r", "ffb08b796ebe009ba724b5cbabd49076c276f06ba85c0020b0dde2d447ae2c5f")]
-        [TestCase("F^S%QljSfV","thisIsNotAPasswordBob", "3e4b6019e5cbb8fa09adffbadc272e2b6a62660f792d622df41b39385088e469")]
-        [TestCase("f1nd1ngn3m0","farm1990M0O", "07dbb6e6832da0841dd79701200e4b179f1a94a7b3dd26f612817f3c03117434")]
+        [TestCase("F^S%QljSfV","secret", "15e24a16abfc4eef5faeb806e903f78b188c30e4984a03be4c243312f198d1229ae8759e98993464cf713e3683e891fb3f04fbda9cc40f20a07a58ff4bb00788")]
+        [TestCase("KjvFUC#K*i","noPow3r", "89155af89e8a34dcbde088c72c3f001ac53486fcdb3946b1ed3fde8744ac397d99bf6f44e005af6f6944a1f7ed6bd0e2dd09b8ea3bcfd3e8862878d1709712e5")]
+        [TestCase("F^S%QljSfV","thisIsNotAPasswordBob", "2c9dab627bd73b6c4be5612ff77f18fa69fa7c2a71ecedb45dcec45311bea736e320462c6e8bfb2421ed112cfe54fac3eb9ff464f3904fe7cc915396b3df36f0")]
         public void Test_Get_Password_With_SHA2_Ok(string salt, string password, string expected)
         {
-            var hashedPassword = EncryptionFunctions.GetSHA256(salt, password);
+            var hashedPassword = EncryptionFunctions.GetSHA512(salt, password);
             Assert.AreEqual(expected, hashedPassword);
         }
 

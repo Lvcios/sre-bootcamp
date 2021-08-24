@@ -9,9 +9,9 @@ namespace wizeline.Common
     public static class EncryptionFunctions
     {
 
-        public static string GetSHA256(string salt, string password)
+        public static string GetSHA512(string salt, string password)
         {
-            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var crypt = new System.Security.Cryptography.SHA512Managed();
             var hash = new StringBuilder();
             byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes($"{password}{salt}"));
             foreach (byte tbyte in crypto)
