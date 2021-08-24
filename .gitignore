@@ -54,3 +54,9 @@ __pycache__/
 provision/.*/*
 
 provision/terraform/destroy-candidate.sh
+
+/auth_api/csharp/.vs/
+/auth_api/csharp/wizeline/bin/
+/auth_api/csharp/wizeline/obj/
+/auth_api/csharp/wizeline.tests/bin/
+/auth_api/csharp/wizeline.tests/obj/
