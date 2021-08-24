@@ -60,6 +60,7 @@ namespace wizeline.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("/protected")]
         public async Task<IActionResult> ProtectedEndpoint()
         {
