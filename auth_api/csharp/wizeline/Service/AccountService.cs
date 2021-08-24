@@ -20,6 +20,7 @@ namespace wizeline.Service
         {
             var user = new UserModel();
             user = null;
+            //same for db string connection and datacontext
             using (var connection = new MySql.Data.MySqlClient.MySqlConnection("Server=bootcamp-tht.sre.wize.mx;Database=bootcamp_tht;User Id=secret;Password=noPow3r"))
             {
                 string pass = EncryptionFunctions.GetSHA512(salt, password);
